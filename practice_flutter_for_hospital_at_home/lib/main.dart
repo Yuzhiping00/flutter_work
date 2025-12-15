@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'constants/app_constants.dart';
-import '../models/survey_definition.dart';
 import 'views/survey_page.dart';
 
 void main() {
@@ -25,11 +24,7 @@ class MyHomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final def = SurveyDefinition(
-      title: 'Sample Survey',
-      questions: standardSymptomSurveyQuestions,
-    );
-
-    return SurveyPage(survey: def);
+    final def = standardSymptomSurvey;
+    return SurveyPage(definition: def);
   }
 }

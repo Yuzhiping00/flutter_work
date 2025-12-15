@@ -5,6 +5,7 @@ import '../models/survey_definition.dart';
 import '../models/survey_response.dart';
 part 'survey_repository.g.dart';
 
+// This abstract class defines the interface for submitting survey responses.
 abstract class SurveyRepository {
   Future<void> submitSurveyResponse(
     SurveyDefinition survey,
@@ -12,7 +13,7 @@ abstract class SurveyRepository {
   );
 }
 
-
+// This class implements the SurveyRepository interface using in-memory storage.
 class InMemorySurveyRepository implements SurveyRepository {
   @override
   Future<void> submitSurveyResponse(
